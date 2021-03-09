@@ -1,0 +1,144 @@
+* {
+  user-select: none;
+}
+
+*:focus {
+  outline: none;
+}
+body {
+  font-family: montserrat;
+  margin: 0;
+  background: radial-gradient(#03a0f4, #004b6d)
+}
+
+#app-cover {
+  display: table;
+  width: 600px;
+  margin: 80px auto;
+}
+
+.row {
+  display: table-row;
+}
+
+.toggle-button-cover {
+  display: table-cell;
+  position: relative;
+  width: 200px;
+  height: 140px;
+}
+
+.button-cover {
+  margin: 10px;
+  background-color: white;
+  box-shadow: 0 3px 0 #004b6d;
+}
+
+.button-cover, .knobs, .layer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.button {
+  position: relative;
+  top: 50%;
+  width: 74px;
+  height: 36px;
+  margin: -20px auto 0 auto;
+  overflow: hidden;
+}
+
+.button.r, .button.r .layer {
+  border-radius: 100px;
+  }
+
+.checkbox {
+  position: relative;
+  width: 100%;
+  padding 0;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.knobs {
+  z-index: 2;
+}
+
+.layer {
+  width: 100%;
+  background-color: #ebf7fc;
+  transition: 0.3s ease all;
+  z-index: 1;
+}
+
+.heading {
+  padding: 10em 0 0 0;
+
+}
+
+.title {
+  margin: auto;
+  text-align: center;
+  position: relative;
+
+}
+
+h1 {
+  color: white;
+  font-family: sans-serif;
+  font-size: 1.5em;
+  font-weight: normal;
+  font-style: italic;
+  letter-spacing: 0.1em;
+  line-height: 2.2em;
+}
+
+em {
+  font-family: serif;
+  font-size: 3.5em;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  display: block;
+  font-style: normal;
+ padding-top: 0.1em;
+ text-shadow: 0.07em 0.07em 0 rgba(0,0,0,0.1) 
+}
+
+/* Toggle Button */
+
+#button .knobs:before {
+  content: 'ON';
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 20px;
+  height: 10px;
+  color: #fff;
+  font-size: 10px;
+  font-weight: bold;
+  text-align: center;
+  line-height:1;
+  padding: 9px 4px;
+  background-color: #03a9f4;
+  border-radius: 50%;
+  transition: 0.3 cubic-bezier(0.18, 0.89, 0.35, 1.14) all;
+  }
+
+  #button .checkbox:checked + .knobs::before {
+    content: 'OFF';
+    left: 42px;
+    background-color:#f44336;
+  }
+
+  #button .checkbox:checked ~ .layer {
+    background-color: #fcebed;
+  }
+  
+  #button .knobs, #button .knobs::before, #button-1 .layer {
+    transition: 0.3s ease all;
+  }
