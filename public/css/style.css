@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+
+:root {
+    --modal-duration: 1s;
+    --primary-color: #00b9e4;
+    --secondary-color: #2b778e;
+    --white-color: #fff;
+  }
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  h1 {
+    font-size: 2em;
+    margin-bottom: 10px;  
+  }
+  body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      /* overflow: hidden; */
+      background-image: url("https://www.ucbcanada.com/uploads/give_hope_background_web_70.jpg");
+      background-position: center;
+      background-size: cover;
+      /* background: linear-gradient(to right, #4f6c96, #26567b); */
+}
+
+::selection {
+  color: #fff;
+  background: var(--primary-color);
+}
+
+.container-top {
+  margin: 20px;
+  padding: 20px;
+  width: 560px;
+  background-image: url("https://www.ucbcanada.com/uploads/make_hope_possible_heading.jpg");
+  background-color: #fff;
+  background-size: 100%;
+  border-radius: 10px;
+  background-repeat: no-repeat;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+}
+.container-top .content {
+  margin-top: 140px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.container {
+    flex:center;
+    background: #fff;
+    border-radius: 10px;
+    text-align: center;
+    padding: 0px 20px;
+
+}
+
+.container header {
+    /* color: var(--white-color);
+    background-image: url("make_hope_possible_heading.jpg"); */
+    font-size: 35px;
+    font-weight: 600;
+    /* margin: 0 0 30px 0; */
+}
+
+.container .form-outer {
+  width: 100%;
+  overflow: hidden;
+}
+
+.container .form-outer form {
+  display: flex;
+  width: 400%;
+}
+
+.form-outer form .page {
+  width: 25%;
+  transition: margin-left 0.3s ease-in-out;
+}
+
+.form-outer form .page .title {
+  text-align: left;
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.form-outer form .page .field {
+  height: 45px;
+  width: 480px;
+  margin: 45px 0;
+  display: flex;
+  position: relative;
+}
+
+form .page .field .label {
+  position: absolute;
+  top: -30px;
+  font-weight: 500;
+}
+
+form .page .field input {
+  height: 100%;
+  width: 100%;
+  border: 1px solid lightgrey;
+  border-radius: 8px;
+  padding-left: 15px;
+  font-size: 18px;
+}
+
+form .page .field select {
+  -webkit-appearance: none;
+  border: 1px solid lightgrey;
+  width: 100%;
+  height: 100%;
+  padding-left: 10px;
+  font-size: 17px;
+  font-weight: 500;
+}
+
+form .page .field button {
+  width: 100%;
+  height: calc(100% + 5px);
+  border: none;
+  background: var(--primary-color);
+  margin-top: -20px;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: 0.6s ease;
+}
+
+form .page .field button:hover {
+  background: #000;
+}
+
+form .page .btns button {
+  margin-top: -20px!important;
+}
+
+form .page .btns button.prev {
+  margin-right: 4px;
+  font-size: 17px;
+}
+
+form .page .btns button.next {
+  margin-left: 4px;
+}
+
+.container .progress-bar {
+  display: flex;
+  margin: 40px 0;
+  user-select: none;
+}
+
+.container .progress-bar .step {
+  text-align: center;
+  width: 100%;
+  position: relative;
+}
+
+.progress-bar .step p {
+  font-weight: 500;
+  font-size: 18px;
+  color: rgba(0, 0, 0, 0.755);
+  margin-bottom: 8px;
+}
+
+.progress-bar .step .bullet{
+  height: 26px;
+  width: 26px;
+  border: 2px solid #21212177;
+  display: inline-block;
+  border-radius: 50%;
+  position: relative;
+  transition: 0.2s;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 22px;
+}
+
+.progress-bar .step .bullet.active{
+  border-color: var(--primary-color);
+  background: var(--primary-color);
+}
+
+.progress-bar .step .bullet span{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.progress-bar .step .bullet.active span{
+  display: none;
+}
+
+.progress-bar .step .bullet:before,
+.progress-bar .step .bullet:after{
+  position: absolute;
+  content: '';
+  bottom: 8px;
+  right: -85px;
+  height: 4px;
+  width: 74px;
+  background: #3a3a3a4d;
+}
+
+.progress-bar .step .bullet.active:after {
+  background: var(--primary-color);
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: animate 0.3s linear forwards;
+}
+@keyframes animate {
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+.progress-bar .step span.active {
+  display: none;
+}
+
+.progress-bar .step:last-child .bullet:before,
+.progress-bar .step:last-child .bullet:after{
+  display: none;
+}
+.progress-bar .step p.active{
+  color: var(--primary-color);
+  transition: 0.2s linear;
+}
+.progress-bar .step .check{
+  position: absolute;
+  left: 50%;
+  top: 70%;
+  font-size: 15px;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+.progress-bar .step .check.active{
+  display: block;
+  color: #fff;
+}
